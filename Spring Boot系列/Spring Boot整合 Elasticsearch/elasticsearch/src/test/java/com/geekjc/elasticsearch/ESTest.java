@@ -57,7 +57,7 @@ public class ESTest {
 
     @Test // 新增1个
     public void testAdd() throws Exception {
-        User user = new User(1L, "zheng qing", "zheng qing is a programmer!", 18);
+        User user = new User(1L, "ll", "ll is a programmer!", 18);
         repository.save(user);
     }
 
@@ -65,7 +65,7 @@ public class ESTest {
     public void testBatchAdd() throws Exception {
         List<User> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            User user = new User(i + 2L, "zheng qing" + i + 1, "zheng qing is a programmer!", 18 + i );
+            User user = new User(i + 2L, "ll" + i + 1, "ll is a programmer!", 18 + i );
             list.add(user);
         }
         repository.saveAll(list);
@@ -105,7 +105,7 @@ public class ESTest {
         NativeSearchQueryBuilder builder = new NativeSearchQueryBuilder();
         BoolQueryBuilder bool = QueryBuilders.boolQuery();
         // 模糊查询
-        bool.must(QueryBuilders.matchQuery("intro", "zheng"));
+        bool.must(QueryBuilders.matchQuery("intro", "ll"));
         // 精确过滤
         List<QueryBuilder> filters = bool.filter();
         filters.add(QueryBuilders.rangeQuery("age").gte(0).lte(200));
