@@ -168,7 +168,7 @@
                     </from>
                     <!-- 最后生成的镜像配置 -->
                     <to>
-                        <!-- push到阿里云镜像仓库，如果是其它镜像仓库，将下面地址替换掉即可，ex: `Docker Hub` 的 `docker.io/zhengqing/xxx` -->
+                        <!-- push到阿里云镜像仓库，如果是其它镜像仓库，将下面地址替换掉即可，ex: `Docker Hub` 的 `docker.io/geekjc/xxx` -->
                         <image>registry.cn-hangzhou.aliyuncs.com/geekjc/demo</image>
                         <!-- 镜像版本号 -->
                         <tags>

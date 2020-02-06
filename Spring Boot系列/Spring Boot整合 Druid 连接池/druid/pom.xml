@@ -5,19 +5,19 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
+        <version>2.2.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.geekjc</groupId>
-    <artifactId>resubmit</artifactId>
+    <artifactId>druid</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>resubmit</name>
+    <name>druid</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <mybatis-plus-boot-starter.version>2.2.0</mybatis-plus-boot-starter.version>
-        <mysql.version>8.0.12</mysql.version>
+        <mysql.version>8.0.19</mysql.version>
         <commons-lang3.version>3.6</commons-lang3.version>
         <hutool-all.version>4.6.2</hutool-all.version>
         <springfox.version>2.6.1</springfox.version>
@@ -51,7 +51,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <version>${mysql.version}</version>
         </dependency>
         <!-- 阿里数据库连接池 -->
         <dependency>
@@ -110,12 +110,6 @@
             <version>${springfox.version}</version>
         </dependency>
 
-        <!-- ==================  校验表单重复提交所需依赖 ===================== -->
-        <!-- AOP依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
         <!-- Redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -127,6 +121,8 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <build>
@@ -173,7 +169,7 @@
                     <!-- 最后生成的镜像配置 -->
                     <to>
                         <!-- push到阿里云镜像仓库，如果是其它镜像仓库，将下面地址替换掉即可，ex: `Docker Hub` 的 `docker.io/geekjc/xxx` -->
-                        <image>registry.cn-hangzhou.aliyuncs.com/geekjc/resubmit</image>
+                        <image>registry.cn-hangzhou.aliyuncs.com/geekjc/demo</image>
                         <!-- 镜像版本号 -->
                         <tags>
                             <tag>v1</tag>

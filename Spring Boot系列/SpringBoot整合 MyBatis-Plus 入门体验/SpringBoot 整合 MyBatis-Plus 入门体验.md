@@ -228,7 +228,7 @@ mybatis-plus:
     #logic-delete-value: 0 # 逻辑已删除值(默认为 1)
     #logic-not-delete-value: 1 # 逻辑未删除值(默认为 0)
     #自定义填充策略接口实现
-  #    meta-object-handler: com.zhengqing.config.MyMetaObjectHandler
+  #    meta-object-handler: com.geekjc.config.MyMetaObjectHandler
   #自定义SQL注入器
   #sql-injector: com.baomidou.springboot.xxx
   configuration:

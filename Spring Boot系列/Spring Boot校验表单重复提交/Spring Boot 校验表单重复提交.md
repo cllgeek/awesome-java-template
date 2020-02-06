@@ -79,7 +79,7 @@ public class NoRepeatSubmitAop {
      *      定义切入点表达式： execution(public * (…))
      *      表达式解释： execution：主体    public:可省略   *：标识方法的任意返回值  任意包+类+方法(…) 任意参数
      *
-     *      com.zhengqing.demo.modules.*.api ： 标识AOP所切服务的包名，即需要进行横切的业务类
+     *      com.geekjc.demo.modules.*.api ： 标识AOP所切服务的包名，即需要进行横切的业务类
      *      .*Controller ： 标识类名，*即所有类
      *      .*(..) ： 标识任何方法名，括号表示参数，两个点表示任何参数类型
      *
@@ -87,7 +87,7 @@ public class NoRepeatSubmitAop {
      * @param noRepeatSubmit:自定义的注解对象
      * @return: java.lang.Object
      */
-    @Around("execution(* com.zhengqing.demo.modules.*.api.*Controller.*(..)) && @annotation(noRepeatSubmit)")
+    @Around("execution(* com.geekjc.demo.modules.*.api.*Controller.*(..)) && @annotation(noRepeatSubmit)")
     public Object doAround(ProceedingJoinPoint pjp, NoRepeatSubmit noRepeatSubmit) {
         try {
             HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
