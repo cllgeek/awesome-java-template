@@ -13,7 +13,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&useSSL=false # MySQL在高版本需要指明是否进行SSL连接 解决则加上 &useSSL=false
     name: demo
     username: root
-    password: 375587295
+    password: root
     platform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
     #  ===================== ↓↓↓↓↓↓  使用druid数据源  ↓↓↓↓↓↓ =====================
@@ -60,6 +60,17 @@ spring:
         max-idle: 10 # 连接池中的最大空闲连接
         min-idle: 5 # 连接池中的最小空闲连接
 
+  # es相关配置
+  data:
+    elasticsearch:
+      # 配置集群名
+      cluster-name: elasticsearch # 访问 es服务端 `http://127.0.0.1:9200/` 填写 `cluster_name` 对应的值
+      # 配置节点信息，逗号分隔，如果没有指定，则启动ClientNode 【 注：9200->图形界面端、9300->程序端 】
+      cluster-nodes: 127.0.0.1:9300
+      # 开启 Elasticsearch 仓库(默认值:true)
+      repositories:
+        enabled: true
+
 management:
   security:
     enabled: false
@@ -86,7 +97,7 @@ mybatis-plus:
     #logic-delete-value: 0 # 逻辑已删除值(默认为 1)
     #logic-not-delete-value: 1 # 逻辑未删除值(默认为 0)
     #自定义填充策略接口实现
-    #    meta-object-handler: com.geekjc.druid.config.MyMetaObjectHandler
+    #    meta-object-handler: com.geekjc.config.MyMetaObjectHandler
     #自定义SQL注入器
     #sql-injector: com.baomidou.springboot.xxx
   configuration:

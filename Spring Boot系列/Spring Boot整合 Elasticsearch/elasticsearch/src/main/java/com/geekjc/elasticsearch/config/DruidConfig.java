@@ -1,67 +1,24 @@
-## 1. 前言
+package com.geekjc.elasticsearch.config;
 
-###### Druid 是什么？
+import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
+import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.JdkRegexpMethodPointcut;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
-Druid 是 Java 语言中最好的数据库连接池，能够提供强大的监控和扩展功能。
+import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
-> 更多可参考官方文档：[https://github.com/alibaba/druid/](https://github.com/alibaba/druid/)
-
-###### 本文将基于 `springboot 2.1.8.RELEASE` + `mybatis-plus 2.2.0` 来整合 `Druid` 连接池
-
-## 2. springboot 整合 druid 入门
-
-#### 2.1 `pom.xml` 中引入 `druid` 依赖
-
-```xml
-<!-- 阿里druid数据库连接池 -->
-<dependency>
-     <groupId>com.alibaba</groupId>
-     <artifactId>druid</artifactId>
-     <version>1.1.10</version>
- </dependency>
-```
-
-#### 2.2 `application.yml` 中配置 druid
-
-```yml
-spring:
-  # 配置数据源
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false # MySQL在高版本需要指明是否进行SSL连接 解决则加上 &useSSL=false
-    name: demo
-    username: root
-    password: root
-    platform: mysql
-    driver-class-name: com.mysql.jdbc.Driver
-    #  ===================== ↓↓↓↓↓↓  使用druid数据源  ↓↓↓↓↓↓ =====================
-    # 连接池类型，druid连接池springboot暂无法默认支持，需要自己配置bean
-    type: com.alibaba.druid.pool.DruidDataSource
-    initialSize: 5 # 连接池初始化连接数量
-    minIdle: 5 # 连接池最小空闲数
-    maxActive: 20 # 连接池最大活跃连接数
-    maxWait: 60000 # 配置获取连接等待超时的时间
-    timeBetweenEvictionRunsMillis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-    minEvictableIdleTimeMillis: 300000 # 配置一个连接在池中最小生存的时间，单位是毫秒
-    validationQuery: SELECT 1 FROM DUAL # 连接是否有效的查询语句
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    # 打开PSCache，并且指定每个连接上PSCache的大小
-    poolPreparedStatements: true
-    maxPoolPreparedStatementPerConnectionSize: 20
-    removeAbandoned: true
-    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，【 'stat':监控统计  'wall'：用于防火墙，防御sql注入   'slf4j':日志 】
-    filters: stat,wall,slf4j
-    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-    #useGlobalDataSourceStat: true  # 合并多个DruidDataSource的监控数据
-    loginUsername: admin # SQL监控后台登录用户名
-    loginPassword: admin # SQL监控后台登录用户密码
-```
-
-#### 2.3 druid 核心配置类
-
-```java
 /**
  * <p> Druid核心配置类 - 注册bean </p>
  *
@@ -146,6 +103,7 @@ public class DruidConfig {
         return new DataSourceTransactionManager(dataSource());
     }
 
+
     /**
      * ↓↓↓↓↓↓  配置spring监控  ↓↓↓↓↓↓
      * DruidStatInterceptor: druid提供的拦截器
@@ -189,16 +147,3 @@ public class DruidConfig {
     }
 
 }
-```
-
-#### 2.4 访问 [http://127.0.0.1:8080/druid/index.html](http://127.0.0.1:8080/druid/index.html) 查看监控信息
-
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191220115832968.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly96aGVuZ3FpbmcuYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191220115914119.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly96aGVuZ3FpbmcuYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20191220115939843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly96aGVuZ3FpbmcuYmxvZy5jc2RuLm5ldA==,size_16,color_FFFFFF,t_70)
-
-### 本文案例 demo 源码
-
-https://github.com/cllgeek/awesome-java-template/tree/master/Spring%20Boot%E7%B3%BB%E5%88%97/Spring%20Boot%E6%95%B4%E5%90%88%20Druid%20%E8%BF%9E%E6%8E%A5%E6%B1%A0
-
-https://www.geekjc.com/post/5e3b94993741a91270bba8ae
