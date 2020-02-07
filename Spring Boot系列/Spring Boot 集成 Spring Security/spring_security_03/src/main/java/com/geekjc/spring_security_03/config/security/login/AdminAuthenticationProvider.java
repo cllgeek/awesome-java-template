@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  *  <p> 自定义认证处理 </p>
  *
  * @description :
- * @author : zhengqing
+ * @author : ll
  * @date : 2019/10/12 14:49
  */
 @Component

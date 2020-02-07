@@ -16,7 +16,7 @@ import java.io.Serializable;
 /**
  * <p>  系统管理-角色表  </p>
  *
- * @author: zhengqing
+ * @author: ll
  * @date: 2019-08-20
  */
 @Data

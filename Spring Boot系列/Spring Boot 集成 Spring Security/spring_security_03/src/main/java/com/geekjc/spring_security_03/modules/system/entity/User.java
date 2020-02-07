@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * <p>  系统管理-用户基础信息表 </p>
  *
- * @author: zhengqing
+ * @author: ll
  * @date: 2019-08-19
  */
 //@AllArgsConstructor

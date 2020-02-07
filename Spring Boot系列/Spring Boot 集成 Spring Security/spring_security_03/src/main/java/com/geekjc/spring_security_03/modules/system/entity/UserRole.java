@@ -14,7 +14,7 @@ import lombok.Data;
 /**
  * <p>  系统管理 - 用户角色关联表  </p>
  *
- * @author: zhengqing
+ * @author: ll
  * @date: 2019-08-20
  */
 @Data

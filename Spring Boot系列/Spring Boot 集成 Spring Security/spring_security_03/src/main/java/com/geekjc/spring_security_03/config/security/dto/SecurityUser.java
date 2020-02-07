@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * <p> 安全认证用户详情 </p>
  *
- * @author : zhengqing
+ * @author : ll
  * @description :
  * @date : 2019/10/14 17:46
  */

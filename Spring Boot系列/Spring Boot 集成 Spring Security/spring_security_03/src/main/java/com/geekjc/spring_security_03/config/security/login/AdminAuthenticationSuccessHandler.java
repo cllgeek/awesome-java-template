@@ -17,7 +17,7 @@ import java.io.IOException;
  *  <p> 认证成功处理 </p>
  *
  * @description :
- * @author : zhengqing
+ * @author : ll
  * @date : 2019/10/12 15:31
  */
 @Component

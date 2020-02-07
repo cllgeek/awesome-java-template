@@ -10,7 +10,7 @@ import java.security.MessageDigest;
  *  <p> 加密工具 </p>
  *
  * @description:
- * @author: zhengqing
+ * @author: ll
  * @date: 2019/10/13 0013 15:25
  */
 @Slf4j

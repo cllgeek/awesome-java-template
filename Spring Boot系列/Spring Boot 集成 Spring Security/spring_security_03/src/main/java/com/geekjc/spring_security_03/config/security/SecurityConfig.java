@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 /**
  *  <p> Security 核心配置类 </p>
  *
- * @author：  zhengqing <br/>
+ * @author：  ll <br/>
  * @date：  2019/9/30$ 10:58$ <br/>
  * @version：  <br/>
  */

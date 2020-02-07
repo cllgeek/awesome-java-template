@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
  *  <p> 基础分页检索参数 </p>
  *
  * @description:
- * @author: zhengqing
+ * @author: ll
  * @date: 2019/9/13 0013 1:57
  */
 @ApiModel

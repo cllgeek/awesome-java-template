@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * <p> 获取访问该url所需要的用户角色权限信息 </p>
  *
- * @author : zhengqing
+ * @author : ll
  * @description : 执行完之后到 `UrlAccessDecisionManager` 中认证权限
  * @date : 2019/10/15 14:36
  */

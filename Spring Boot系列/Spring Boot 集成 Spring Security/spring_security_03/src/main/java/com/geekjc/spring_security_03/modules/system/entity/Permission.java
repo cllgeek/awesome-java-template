@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * <p>  系统管理-权限权限表  </p>
  *
- * @author: zhengqing
+ * @author: ll
  * @date: 2019-08-19
  */
 @Data

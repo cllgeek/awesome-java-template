@@ -5,7 +5,7 @@ package com.geekjc.spring_security_03.modules.common.enumeration;
  *  <p> 响应码枚举 - 可参考HTTP状态码的语义 </p>
  *
  * @description :
- * @author : zhengqing
+ * @author : ll
  * @date : 2019/8/22 11:09
  */
 public enum ResultCode {

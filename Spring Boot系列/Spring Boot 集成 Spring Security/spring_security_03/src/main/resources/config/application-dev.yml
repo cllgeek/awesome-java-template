@@ -74,7 +74,7 @@ mybatis-plus:
     # 解决oracle更新数据为null时无法转换报错，mysql不会出现此情况
     jdbc-type-for-null: "null"
 
-zhengqing:
+ll:
   swagger:
     title: 测试项目demo接口文档
     description: 测试项目demo接口文档

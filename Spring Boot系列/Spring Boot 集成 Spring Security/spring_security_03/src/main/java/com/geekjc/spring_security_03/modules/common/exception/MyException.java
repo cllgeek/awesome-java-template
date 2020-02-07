@@ -4,7 +4,7 @@ package com.geekjc.spring_security_03.modules.common.exception;
  *  <p> 自定义异常类 </p>
  *
  * @description :
- * @author : zhengqing
+ * @author : ll
  * @date : 2019/8/26 15:11
  */
 public class MyException extends RuntimeException {

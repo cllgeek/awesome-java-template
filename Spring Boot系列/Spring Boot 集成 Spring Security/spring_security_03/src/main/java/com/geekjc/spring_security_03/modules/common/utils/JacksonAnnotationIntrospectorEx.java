@@ -11,7 +11,7 @@ import java.lang.annotation.Annotation;
  *  <p> 扩展JACKSON对FastJson注释JSONField的支持 </p>
  *
  * @description :
- * @author : zhengqing
+ * @author : ll
  * @date : 2019/10/11 16:02
  */
 public class JacksonAnnotationIntrospectorEx extends JacksonAnnotationIntrospector {

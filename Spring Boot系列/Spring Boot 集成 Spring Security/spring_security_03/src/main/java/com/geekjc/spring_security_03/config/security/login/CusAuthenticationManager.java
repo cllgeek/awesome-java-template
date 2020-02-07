@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  * <p> 自定义认证管理器 </p>
  *
- * @author : zhengqing
+ * @author : ll
  * @description :
  * @date : 2019/10/12 14:49
  */

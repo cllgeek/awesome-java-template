@@ -16,7 +16,7 @@ import java.util.Collection;
 /**
  * <p> 对访问url进行权限认证处理 </p>
  *
- * @author : zhengqing
+ * @author : ll
  * @description :
  * @date : 2019/10/15 14:21
  */

@@ -7,11 +7,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *  <p> MyProperties </p>
  *
  * @description :
- * @author : zhengqing
+ * @author : ll
  * @date : 2019/8/19 9:07
  */
 @Data
-@ConfigurationProperties(prefix = "zhengqing", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "ll", ignoreUnknownFields = false)
 public class MyProperties {
 
     /**
