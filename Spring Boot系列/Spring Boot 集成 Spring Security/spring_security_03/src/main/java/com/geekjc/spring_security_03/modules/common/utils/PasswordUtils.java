@@ -25,6 +25,7 @@ public class PasswordUtils {
      * @return
      */
     public static boolean isValidPassword(String password, String hashedPassword, String salt) {
+        log.info(encodePassword(password, salt));
         return hashedPassword.equalsIgnoreCase(encodePassword(password, salt));
     }
 

@@ -95,10 +95,10 @@ CREATE TABLE `t_sys_user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统管理-用户基础信息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of t_sys_user
+-- Records of t_sys_user 密码123456
 -- ----------------------------
-INSERT INTO `t_sys_user` VALUES (1, 'admin', '97ba1ef7f148b2aec1c61303a7d88d0967825495', 'geekjc', 'geekjc', '0d717eed80140b7840ed5b4a7c35bbda5a03fcd5', '2019-05-05 16:09:06', '2019-09-19 00:59:47');
-INSERT INTO `t_sys_user` VALUES (2, 'test', '97ba1ef7f148b2aec1c61303a7d88d0967825495', '测试号', 'geekjc', 'a4bf084f250aebc8f0bc806bdf9bca205c7706c9', '2019-05-05 16:15:06', '2019-09-19 01:47:19');
+INSERT INTO `t_sys_user` VALUES (1, 'admin', '2beac9f6c54104f89fe461ddc76f8327a9a38633', 'geekjc', 'geekjc', '0d717eed80140b7840ed5b4a7c35bbda5a03fcd5', '2019-05-05 16:09:06', '2019-09-19 00:59:47');
+INSERT INTO `t_sys_user` VALUES (2, 'test', '2beac9f6c54104f89fe461ddc76f8327a9a38633', '测试号', 'geekjc', 'a4bf084f250aebc8f0bc806bdf9bca205c7706c9', '2019-05-05 16:15:06', '2019-09-19 01:47:19');
 
 -- ----------------------------
 -- Table structure for t_sys_user_role
